@@ -11,29 +11,46 @@ public class ControllerShootWatcher : MonoBehaviour
     public float shootFrequency = 1.0f;
     public float shootAmplitude = 1.0f;
     public float duration = 1.0f;
+    public GunController gunController;
 
     void Start()
     {
         handTrigger = OVRInput.Button.SecondaryIndexTrigger;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         bool triggerDown = OVRInput.GetDown(handTrigger);
         
-        if(!triggerDown)
-        {
+        // if trigger is still down from earlier
+        if(!triggerDown) {
             canShoot = true;
-        } else if (canShoot)
-        {
-            canShoot = false;
-            OVRInput.SetControllerVibration(shootFrequency, shootAmplitude, OVRInput.Controller.RTouch);
-            Invoke("stopHaptic", duration);
-            Debug.Log("Bang!");
+        } else if (canShoot) {
+            // if gun and trigger are still down
+            shootGun();
         }
     }
 
-    void stopHaptic()
+    private void shootGun()
+    {
+        canShoot = false;
+        gunShootVibration();
+        RaycastHit hit = gunController.shootGun();
+        if (hit.collider)
+        {
+            Debug.Log("Gun shot hit: " + hit.collider.gameObject.name);
+        } else
+        {
+            Debug.Log("Miss");
+        }
+    }
+
+    private void gunShootVibration()
+    {
+        OVRInput.SetControllerVibration(shootFrequency, shootAmplitude, OVRInput.Controller.RTouch);
+        Invoke("stopHaptic", duration);
+    }
+    private void stopHaptic()
     {
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
     }

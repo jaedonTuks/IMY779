@@ -253,6 +253,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &867557408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 566418393445466918, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
+  m_PrefabInstance: {fileID: 2066263730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &867557412
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867557408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 30945264241753363, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
 --- !u!1001 &958953922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235439996}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 8.09, y: 3, z: -1.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1323,6 +1342,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 0477c70222e89224bbe754421923b6c9, type: 2}
+    - target: {fileID: 566418393445466918, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
       propertyPath: m_Name
       value: Shooting_Range

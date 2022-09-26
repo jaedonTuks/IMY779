@@ -35,7 +35,7 @@ public class ControllerShootWatcher : MonoBehaviour
     {
         canShoot = false;
         gunShootVibration();
-        RaycastHit hit = gunController.shootGun();
+        RaycastHit hit = gunController.ShootGun();
         if (hit.collider)
         {
             Debug.Log("Gun shot hit: " + hit.collider.gameObject.name);

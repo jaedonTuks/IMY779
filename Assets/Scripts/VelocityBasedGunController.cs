@@ -38,7 +38,7 @@ public class VelocityBasedGunController : MonoBehaviour
         if(framesSinceLastShot == -1 && localVelocity.z < movementThreshold)
         {
             Debug.Log("Movement triggered shot");
-            gunController.shootGun();
+            gunController.ShootGun();
             framesSinceLastShot = 0;
         }
 

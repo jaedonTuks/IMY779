@@ -23,11 +23,13 @@ public class GunController : MonoBehaviour
         Vector3 fwd = -transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
 
-        Debug.DrawRay(transform.position, fwd * maxLineLength, Color.red);
         if (Physics.Raycast(transform.position, fwd, out hit, maxLineLength, layerMask)) {
-           Instantiate(hitParticle, hit.point, Quaternion.identity);
-            // todo add tag here for goal
-           scoreController.AddToScore(1);
+            if (hit.collider.gameObject.CompareTag("Target"))
+            { 
+                scoreController.AddToScore(1);
+            }
+
+            Instantiate(hitParticle, hit.point, Quaternion.identity);
         }
 
 

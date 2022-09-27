@@ -514,7 +514,8 @@ MonoBehaviour:
     numberOfShots: 0
     numberOfShotsOnTarget: 0
     totalScore: 0
-  allScoreData: []
+  allScoreDataContainer:
+    scoreDataObjects: []
 --- !u!4 &1524457769
 Transform:
   m_ObjectHideFlags: 0
@@ -1365,6 +1366,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -4228726808702951277, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
     - target: {fileID: -3147993061519950980, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1377,9 +1382,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -2796739252926282975, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
     - target: {fileID: -1314872803122130754, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1314872803122130754, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
+      propertyPath: m_TagString
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: -415984661173503716, guid: 5a8f10e75147b1f49852c55af670762f, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -8,6 +8,7 @@ public class GunController : MonoBehaviour
     public float maxLineLength = 50f;
     public Transform endOfBarrel;
     public GameObject hitParticle;
+    public ScoreController scoreController;
 
     private void Start()
     {
@@ -15,14 +16,20 @@ public class GunController : MonoBehaviour
     }
 
 
-    public RaycastHit shootGun()
+    public RaycastHit ShootGun()
     {
+        scoreController.IncrementNumberOfShots();
+
         Vector3 fwd = -transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
 
-        Debug.DrawRay(transform.position, fwd * maxLineLength, Color.red);
         if (Physics.Raycast(transform.position, fwd, out hit, maxLineLength, layerMask)) {
-           Instantiate(hitParticle, hit.point, Quaternion.identity);
+            if (hit.collider.gameObject.CompareTag("Target"))
+            { 
+                scoreController.AddToScore(1);
+            }
+
+            Instantiate(hitParticle, hit.point, Quaternion.identity);
         }
 
 

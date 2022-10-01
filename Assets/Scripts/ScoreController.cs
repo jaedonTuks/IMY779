@@ -16,9 +16,6 @@ public class ScoreController : MonoBehaviour
         Debug.Log("Saving data to file location '" + scoreTrackingFile + "'");
         InitialiseAllScoreData();
         InitialiseNewScoreData();
-
-        // this should be done later
-        Invoke("SaveScoreData", 10.0f);
     }
 
     public void AddToScore(int amountToAdd)

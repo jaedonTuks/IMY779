@@ -10,6 +10,9 @@ public class ScoreController : MonoBehaviour
     public ScoreData newScoreData;
     public AllScoreDataContainer allScoreDataContainer;
 
+    public int objectHitReward = 1;
+    public int targetReachedEndPenalty = 1;
+
     private void Start()
     {
         scoreTrackingFile = Application.persistentDataPath + "/scores.json";
@@ -18,12 +21,17 @@ public class ScoreController : MonoBehaviour
         InitialiseNewScoreData();
     }
 
-    public void AddToScore(int amountToAdd)
+    public void AddToScore()
     {
         newScoreData.numberOfShotsOnTarget++;
-        newScoreData.totalScore += amountToAdd;
-    }    
-    
+        newScoreData.totalScore += objectHitReward;
+    }
+
+    public void MinusFromScore()
+    {
+        newScoreData.totalScore -= targetReachedEndPenalty;
+    }
+
     public void IncrementNumberOfShots()
     {
         newScoreData.numberOfShots++;

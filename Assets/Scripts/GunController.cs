@@ -32,7 +32,7 @@ public class GunController : MonoBehaviour
         if (Physics.Raycast(transform.position, fwd, out hit, maxLineLength, layerMask)) {
             if (hit.collider.gameObject.CompareTag("Target"))
             { 
-                scoreController.AddToScore(1);
+                scoreController.AddToScore();
                 mainParticleModule.startColor = hitColor;
             } else
             {

@@ -11,7 +11,6 @@ public class GunController : MonoBehaviour
     public ParticleSystem.MinMaxGradient hitColor;
     public ParticleSystem.MinMaxGradient missColor;
 
-
     private int layerMask;
     private ParticleSystem.MainModule mainParticleModule;
 
@@ -39,7 +38,6 @@ public class GunController : MonoBehaviour
             {
                 mainParticleModule.startColor = missColor;
             }
-
             Instantiate(hitParticle, hit.point, Quaternion.identity);
         }
 

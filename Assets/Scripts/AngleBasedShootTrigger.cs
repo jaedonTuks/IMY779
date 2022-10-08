@@ -5,7 +5,7 @@ using UnityEngine;
 public class AngleBasedShootTrigger : MonoBehaviour
 {
     [Header("Rotations")]
-    public float updatePreviousPositionInterval = 0.5f;
+    public float updatePreviousPositionInterval = 0.3f;
     public float previousXRotation;
     public float currentXRotation;
     public float changeInXRotation;
@@ -39,19 +39,23 @@ public class AngleBasedShootTrigger : MonoBehaviour
 
     void UpdatePreviousForwardPosition()
     {
-        gunPrevPosition = gunController.transform.position;
-        gunPrevForward = -gunController.transform.TransformDirection(Vector3.forward);
+        if(!IsAngleChangeWithinBounds(changeInXRotation))
+        {
+            gunPrevPosition = gunController.transform.position;
+            gunPrevForward = -gunController.transform.TransformDirection(Vector3.forward);
+        }
     }
 
 
     private void CheckAndTriggerGunShot()
     {
         float usingChange = changeInXRotation;
-
+        Vector3 usingPosition = gunPrevPosition;
+        Vector3 usingForward = gunPrevForward;
         if (framesSinceLastShot == -1 && IsAngleChangeWithinBounds(usingChange))
         {
 
-            gunController.ShootGun(gunPrevPosition, gunPrevForward);
+            gunController.ShootGun(usingPosition, usingForward);
             framesSinceLastShot = 0;
         }
 

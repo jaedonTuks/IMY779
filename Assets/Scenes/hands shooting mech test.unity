@@ -778,14 +778,11 @@ MonoBehaviour:
   previousXRotation: 0
   currentXRotation: 0
   changeInXRotation: 0
-  updateTransformsEveryNFrame: 0
-  frames: 0
   gunController: {fileID: 1205415066}
   minChangeToShootGun: 12
   maxChangeToShoot: 25
-  inFramesBetweenShot: 30
+  inFramesBetweenShot: 45
   framesSinceLastShot: -1
-  hasShotGunThisInterval: 0
 --- !u!1 &1636623401
 GameObject:
   m_ObjectHideFlags: 0

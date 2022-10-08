@@ -10,9 +10,6 @@ public class SpawnController : MonoBehaviour
     public GameObject targetPrefab;
     public Dictionary<SpawnPoint, Transform> spawnPointMap;
 
-
-
-
     private void Start()
     {
         spawnPointMap = new Dictionary<SpawnPoint, Transform>()

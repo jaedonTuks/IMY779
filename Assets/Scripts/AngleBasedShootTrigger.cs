@@ -12,11 +12,11 @@ public class AngleBasedShootTrigger : MonoBehaviour
 
     [Header("Gun settings")]
     public GunController gunController;
-    public float minChangeToShootGun = 25f;
-    public float maxChangeToShoot = 90f;
+    public float minChangeToSkipUpdate = 8f;
+    public float minChangeToShootGun = 12f;
+    public float maxChangeToShoot = 35f;
     public int inFramesBetweenShot = 30;
     public int framesSinceLastShot = -1;
-
 
     private Vector3 gunPrevPosition;
     private Vector3 gunPrevForward;
@@ -39,7 +39,8 @@ public class AngleBasedShootTrigger : MonoBehaviour
 
     void UpdatePreviousForwardPosition()
     {
-        if(!IsAngleChangeWithinBounds(changeInXRotation))
+        float usingChange = changeInXRotation;
+        if (usingChange < minChangeToShootGun)
         {
             gunPrevPosition = gunController.transform.position;
             gunPrevForward = gunController.transform.TransformDirection(Vector3.forward);
@@ -54,7 +55,6 @@ public class AngleBasedShootTrigger : MonoBehaviour
         Vector3 usingForward = gunPrevForward;
         if (framesSinceLastShot == -1 && IsAngleChangeWithinBounds(usingChange))
         {
-
             gunController.ShootGun(usingPosition, usingForward);
             framesSinceLastShot = 0;
         }
@@ -63,6 +63,7 @@ public class AngleBasedShootTrigger : MonoBehaviour
         {
             framesSinceLastShot = -1;
             UpdatePreviousForwardPosition();
+            // todo add in audio clip of a click to indicate gun is ready to refire
         }
         else if (framesSinceLastShot != -1)
         {
@@ -74,6 +75,12 @@ public class AngleBasedShootTrigger : MonoBehaviour
     private bool IsAngleChangeWithinBounds(float angleChange)
     {
         return minChangeToShootGun < angleChange && angleChange < maxChangeToShoot;
+    }
+
+
+    private bool IsInAlwaysUpdateAngleRange(float angle)
+    {
+        return minAngleToAlwaysUpdate < angle && angle < maxAngleToAlwaysUpdate;
     }
 
 }

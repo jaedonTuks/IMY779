@@ -951,6 +951,7 @@ MonoBehaviour:
   currentXRotation: 0
   changeInXRotation: 0
   gunController: {fileID: 1337283271}
+  minChangeToSkipUpdate: 8
   minChangeToShootGun: 12
   maxChangeToShoot: 25
   inFramesBetweenShot: 45

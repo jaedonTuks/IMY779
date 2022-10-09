@@ -42,7 +42,7 @@ public class AngleBasedShootTrigger : MonoBehaviour
         if(!IsAngleChangeWithinBounds(changeInXRotation))
         {
             gunPrevPosition = gunController.transform.position;
-            gunPrevForward = -gunController.transform.TransformDirection(Vector3.forward);
+            gunPrevForward = gunController.transform.TransformDirection(Vector3.forward);
         }
     }
 

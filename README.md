@@ -11,3 +11,5 @@ Set to Visible Meta Files
 Set to Force Text
 
 ## Packages reference:
+### Sci fi gun asset
+https://assetstore.unity.com/packages/3d/props/weapons/weapon-master-scifi-weapon-1-lite-134423

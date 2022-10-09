@@ -11,5 +11,10 @@ Set to Visible Meta Files
 Set to Force Text
 
 ## Packages reference:
+### Oculus SDK plugin:
+https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022
+- adds the sdk to unity along with useful prefabs such as vr rigs, hands etc
+
 ### Sci fi gun asset
 https://assetstore.unity.com/packages/3d/props/weapons/weapon-master-scifi-weapon-1-lite-134423
+- adds the gun model used in the system

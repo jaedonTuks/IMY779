@@ -76,11 +76,4 @@ public class AngleBasedShootTrigger : MonoBehaviour
     {
         return minChangeToShootGun < angleChange && angleChange < maxChangeToShoot;
     }
-
-
-    private bool IsInAlwaysUpdateAngleRange(float angle)
-    {
-        return minAngleToAlwaysUpdate < angle && angle < maxAngleToAlwaysUpdate;
-    }
-
 }

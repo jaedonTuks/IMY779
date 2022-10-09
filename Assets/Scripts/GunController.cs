@@ -28,25 +28,9 @@ public class GunController : MonoBehaviour
     {
         scoreController.IncrementNumberOfShots();
 
-        Vector3 useForward = forward ?? -transform.TransformDirection(Vector3.forward);
+        Vector3 useForward = forward ?? transform.TransformDirection(Vector3.forward);
         Vector3 usePosition = position ?? transform.position;
-        /*RaycastHit hit;
-
-        Debug.DrawRay(transform.position, fwd * maxLineLength, Color.red);
-        if (Physics.Raycast(transform.position, fwd, out hit, maxLineLength, layerMask)) {
-            if (hit.collider.gameObject.CompareTag("Target"))
-            { 
-                scoreController.AddToScore(1);
-                mainParticleModule.startColor = hitColor;
-            } else
-            {
-                mainParticleModule.startColor = missColor;
-            }
-            Instantiate(hitParticle, hit.point, Quaternion.identity);
-        }
-
-
-        return hit;*/
+       
 
         return ShootRay(usePosition, useForward);
     }

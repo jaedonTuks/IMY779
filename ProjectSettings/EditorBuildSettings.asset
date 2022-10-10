@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/hands shooting mech test.unity
+    path: Assets/Scenes/hand_tracking.unity
     guid: cd4d6a5c0937d93489007984d2710f2a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 95fe79c81e440ee4b8da3b8cb691dba2, type: 2}

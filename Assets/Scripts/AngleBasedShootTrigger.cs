@@ -18,8 +18,14 @@ public class AngleBasedShootTrigger : MonoBehaviour
     public int inFramesBetweenShot = 30;
     public int framesSinceLastShot = -1;
 
+    [Header("Feedback")]
+    public AudioSource gunReady;
+
+
     private Vector3 gunPrevPosition;
     private Vector3 gunPrevForward;
+
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -62,6 +68,7 @@ public class AngleBasedShootTrigger : MonoBehaviour
         if (framesSinceLastShot > inFramesBetweenShot)
         {
             framesSinceLastShot = -1;
+            gunReady.Play();
             UpdatePreviousForwardPosition();
             // todo add in audio clip of a click to indicate gun is ready to refire
         }

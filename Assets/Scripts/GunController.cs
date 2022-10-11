@@ -7,6 +7,8 @@ public class GunController : MonoBehaviour
     public ScoreController scoreController;
 
 
+    public AudioSource gunShot;
+
     public GameObject hitParticle;
     public ParticleSystem.MinMaxGradient hitColor;
     public ParticleSystem.MinMaxGradient missColor;
@@ -38,6 +40,7 @@ public class GunController : MonoBehaviour
 
     private RaycastHit ShootRay(Vector3 position, Vector3 forward)
     {
+        gunShot.Play();
         RaycastHit hit;
         Debug.DrawRay(position, forward * maxLineLength, Color.red);
         if (Physics.Raycast(position, forward, out hit, maxLineLength, layerMask))

@@ -18,3 +18,7 @@ https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022
 ### Sci fi gun asset
 https://assetstore.unity.com/packages/3d/props/weapons/weapon-master-scifi-weapon-1-lite-134423
 - adds the gun model used in the system
+
+### Gun shot and reload assets
+https://assetstore.unity.com/packages/audio/sound-fx/weapons/free-laser-weapons-214929
+- adds sounds used
